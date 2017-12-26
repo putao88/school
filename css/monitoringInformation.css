@@ -1,0 +1,206 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+html{
+    font-size: 40px;
+}
+.header{
+    position: fixed;
+    width: 100%;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    background: #1d5cb6;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    text-align: center;
+}
+.header span{
+    color: white;
+    font-size: 0.95rem;
+    line-height: 2.2rem;
+    /*display: block;*/
+    margin-left: 0.2rem;
+}
+.header .img1{
+    float: left;
+    width: 1.1rem;
+    margin-left: 0.75rem;
+    margin-top: 0.5rem;
+}
+.header .img2{
+    float: right;
+    width: 1.3rem;
+    margin-right: 0.75rem;
+    margin-top: 0.5rem;
+}
+.footer{
+    position: fixed;
+    width: 100%;
+    height: 2.45rem;
+    bottom: 0;
+    left: 0;
+}
+.footer a{
+    text-decoration: none;
+}
+.footer-container{
+    width: 100%;
+    /*background: #1d5cb6;*/
+}
+.footer-container .switchboard{
+    background: #1d5cb6;
+    text-align: center;
+    width: 25%;
+    height: 2.45rem;
+    float: left;
+}
+.footer-container .switchboard img{
+    margin-top: 0.5rem;
+}
+.footer-container .switchboard span{
+    font-size: 0.5rem;
+    color: white;
+    display: block;
+}
+.footer-container .WIFI{
+    width: 25%;
+    height: 2.45rem;
+    text-align: center;
+    float: left;
+    background: #1d5cb6;
+}
+.footer-container .WIFI img{
+    margin-top: 0.5rem;
+}
+.footer-container .WIFI span{
+    font-size: 0.5rem;
+    color: white;
+    display: block;
+}
+.footer-container .terminal{
+    width: 25%;
+    height: 2.45rem;
+    text-align: center;
+    float: left;
+    background: #1d5cb6;
+}
+.footer-container .terminal img{
+    margin-top: 0.5rem;
+}
+.footer-container .terminal span{
+    font-size: 0.5rem;
+    color: white;
+    display: block;
+}
+.footer-container .alarm-information{
+    width: 25%;
+    height: 2.45rem;
+    text-align: center;
+    float: left;
+    background: #1d5cb6;
+}
+.footer-container .alarm-information img{
+    margin-top: 0.5rem;
+}
+.footer-container .alarm-information span{
+    font-size: 0.5rem;
+    color: white;
+    display: block;
+}
+.mycontainer{
+    width: 100%;
+    position: relative;/*此时要设置position*/
+    height: 100%;
+    max-height: 100%;
+    padding: 2.2rem 0 2.45rem 0;
+    box-sizing: border-box;
+    overflow: auto;
+    /*text-align: center;*/
+    line-height: 100%;
+}
+.mycontainer-top{
+    width: 100%;
+    overflow:hidden;
+    background-color:rgb(41,162,252);
+    /*background: url("../img/con_bg.png") no-repeat;
+    background-size: 100%;*/
+    height: 11rem;
+}
+.mycontainer-top-top{
+    width: 100%;
+    height: 1.25rem;
+    padding-top: 0.45rem;
+}
+.mycontainer-top-top img{
+    width: 0.8rem;
+    float: right;
+    margin-right: 0.25rem;
+    margin-top: -0.05rem;
+}
+.mycontainer-top-top span{
+    float: right;
+    font-size: 0.8rem;
+    margin-right: 1rem;
+    color: white;
+    margin-top: -0.25rem;
+}
+.mycontainer-top-left{
+    width: 50%;
+    float: left;
+    text-align: center;
+    /*margin-top: 0.75rem;*/
+}
+.mycontainer-top-left span{
+    color: white;
+    font-size: 0.5rem;
+}
+.mycontainer-top-left .canvas{
+    /*margin-top: 0.25rem;*/
+}
+.mycontainer-top-right{
+    width: 50%;
+    float: left;
+    text-align: center;
+    /*margin-top: 0.75rem;*/
+}
+.mycontainer-top-right span{
+    color: white;
+    font-size: 0.5rem;
+}
+.mycontainer-top-right .canvas{
+    /*margin-top: 0.25rem;*/
+}
+.mycontainer-content{
+    width: 100%;
+}
+.mycontainer-content .mycontainer-specific{
+    width: 100%;
+    border-bottom: 1px solid #adadad;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    list-style: none;
+    margin: 0;
+}
+.mycontainer-content .mycontainer-specific .text-left{
+    color: #333333;
+    font-size: 0.8rem;
+    float: left;
+    margin-left: 0.75rem;
+}
+.mycontainer-content .mycontainer-specific .text-right{
+    color: #333333;
+    font-size: 0.8rem;
+    float: right;
+    margin-right: 1rem;
+}
+.mycontainer-content .mycontainer-specific .text{
+    color: #999999;
+    font-size: 0.8rem;
+    float: right;
+    margin-right: 1rem;
+}

@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <title>wifi界面</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/wifi.css">
+    <!--<script src="js/jquery-2.1.1.min.js"></script>-->
+    <script src="js/zepto.min.js"></script>
+    <script src="js/all.js"></script>
+</head>
+<body>
+     <div class="container-fluid"><!--总容器      开始-->
+         <div class="row">
+             <div class="col"><!--总的列     开始-->
+
+                 <div class="header">
+                     <span>WIFI</span>
+                 </div>
+
+                 <div class="mycontainer">
+                     <img src="img/wifipage_pic_404.png">
+                 </div>
+
+                 <div class="footer"><!--底部 固定  开始-->
+                     <div class="footer-container div">
+                         <div class="switchboard">
+                             <a href="index.html" >
+                                 <img src="img/tab_icon_switch.png">
+                                 <span>交换机</span>
+                             </a>
+                         </div>
+                         <div class="WIFI div">
+                             <a href="wifi.html" >
+                                 <img src="img/tab_icon_wifi.png">
+                                 <span>WIFI</span>
+                             </a>
+                         </div>
+                         <div class="terminal div">
+                             <a href="terminal.html" >
+                                 <img src="img/tab_icon_pc.png">
+                                 <span>终端</span>
+                             </a>
+                         </div>
+                         <div class="alarm-information div">
+                             <a href="alarmInformation.html">
+                                 <img src="img/tab_icon_news.png">
+                                 <span>告警信息</span>
+                             </a>
+                         </div>
+                     </div>
+                 </div><!--底部   结束-->
+
+             </div><!--总的列     结束-->
+         </div>
+     </div><!--总容器     结束-->
+     <script>
+         /*底部导航*/
+         $(function () {
+             $(".footer-container div").eq(1).css({
+                 background:"#1e69d2"
+             });
+             $(".footer-container div").click(function () {
+                 $(".footer-container div").css({
+                     background: "#1d5cb6"
+                 });
+                 $(this).css({
+                     background:"#1e69d2"
+                 });
+             });
+         });
+
+     </script>
+</body>
+</html>

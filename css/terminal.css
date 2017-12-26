@@ -1,0 +1,243 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html{
+    font-size: 40px;
+}
+a{
+    text-decoration: none;
+}
+.header{
+    position: fixed;
+    width: 100%;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    background: #1d5cb6;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    text-align: center;
+}
+.header span{
+    color: white;
+    font-size: 0.95rem;
+    line-height: 2.2rem;
+    /*display: block;*/
+    margin-left: 0.2rem;
+}
+.footer{
+    position: fixed;
+    width: 100%;
+    height: 2.45rem;
+    bottom: 0;
+    left: 0;
+}
+.footer a{
+    text-decoration: none;
+}
+.footer-container{
+    width: 100%;
+    /*background: #1d5cb6;*/
+}
+.current{
+    background: #1e69d2;
+    text-align: center;
+    width: 25%;
+    height: 2.45rem;
+    float: left;
+}
+.footer-container .switchboard{
+    background: #1d5cb6;
+    text-align: center;
+    width: 25%;
+    height: 2.45rem;
+    float: left;
+}
+.footer-container .switchboard img{
+    margin-top: 0.5rem;
+}
+.footer-container .switchboard span{
+    font-size: 0.5rem;
+    color: white;
+    display: block;
+}
+.footer-container .WIFI{
+    width: 25%;
+    height: 2.45rem;
+    text-align: center;
+    float: left;
+    background: #1d5cb6;
+}
+.footer-container .WIFI img{
+    margin-top: 0.5rem;
+}
+.footer-container .WIFI span{
+    font-size: 0.5rem;
+    color: white;
+    display: block;
+}
+.footer-container .terminal{
+    width: 25%;
+    height: 2.45rem;
+    text-align: center;
+    float: left;
+    background: #1d5cb6;
+}
+.footer-container .terminal img{
+    margin-top: 0.5rem;
+}
+.footer-container .terminal span{
+    font-size: 0.5rem;
+    color: white;
+    display: block;
+}
+.footer-container .alarm-information{
+    width: 25%;
+    height: 2.45rem;
+    text-align: center;
+    float: left;
+    background: #1d5cb6;
+}
+.footer-container .alarm-information img{
+    margin-top: 0.5rem;
+}
+.footer-container .alarm-information span{
+    font-size: 0.5rem;
+    color: white;
+    display: block;
+}
+.mycontainer{
+    width: 100%;
+    position: relative;/*此时要设置position*/
+    height: 100%;
+    max-height: 100%;
+    padding: 2.2rem 0 2.45rem 0;
+    box-sizing: border-box;
+    overflow: auto;
+}
+.mycontainer-top{
+    width: 100%;
+    background: url("../img/home_bg.png") no-repeat;
+    background-size: 100%;
+    height: 5rem;
+    /*margin-top: 88px;!*此时设置的margin不能用rem*!*/
+    padding: 1.125rem 0;
+}
+.mycontainer-top .mycontainer-top-left{
+    float: left;
+    height: 3rem;
+    width: 50%;
+    border-right: 1px solid white;
+    padding: 0.8rem 0;
+}
+.mycontainer-top .mycontainer-top-left img{
+    margin-left: 0.75rem;
+    margin-top: -0.5rem;
+}
+.mycontainer-top .mycontainer-top-left .text1{
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    opacity: .3;
+}
+.mycontainer-top .mycontainer-top-left .text2{
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+}
+.mycontainer-top .mycontainer-top-left .text3{
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: white;
+}
+.mycontainer-top .mycontainer-top-right{
+    float: left;
+    height: 3rem;
+    width: 50%;
+    padding: 0.8rem 0;
+}
+.mycontainer-top .mycontainer-top-right img{
+    margin-left: 1.125rem;
+    margin-top: -0.5rem;
+}
+.mycontainer-top .mycontainer-top-right .text1{
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    opacity: .3;
+}
+.mycontainer-top .mycontainer-top-right .text2{
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+}
+.mycontainer-top .mycontainer-top-right .text3{
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: white;
+}
+.mycontainer-content{
+    width: 100%;
+    margin-top: 10px;
+    /*padding-bottom: 2.45rem;*/
+}
+.mycontainer-content .mycontainer-specific{
+    width: 100%;
+    /*border-top: 1px solid #adadad;*/
+    height: 2.45rem;
+    line-height: 2.45rem;
+    list-style: none;
+    margin: 0;
+}
+.mycontainer-content .mycontainer-specific .mycontainer-specific-left{
+    border-top: 1px solid #adadad;
+    height: 2.45rem;
+    width: 49.59%;
+    float: left;
+}
+.mycontainer-content .mycontainer-specific .mycontainer-specific-left img{
+    margin-left: 30px;
+    margin-top: -0.4rem;
+}
+.mycontainer-content .mycontainer-specific .mycontainer-specific-left span{
+    color: #333333;
+    font-size: 0.8rem;
+    margin-left: 10px;
+}
+.mycontainer-content .mycontainer-specific .mycontainer-specific-middle{
+    border-top: 1px solid #adadad;
+    height: 2.45rem;
+    float: left;
+    width: 25.74%;
+}
+.mycontainer-content .mycontainer-specific .mycontainer-specific-middle img{
+    margin-top: -0.4rem;
+}
+.mycontainer-content .mycontainer-specific .mycontainer-specific-middle .text1{
+    color: #333333;
+    font-size: 0.8rem;
+    margin-left: 10px;
+}
+.mycontainer-content .mycontainer-specific .mycontainer-specific-middle .text2{
+    color: #333333;
+    font-size: 0.5rem;
+}
+.mycontainer-content .mycontainer-specific .mycontainer-specific-right{
+    border-top: 1px solid #adadad;
+    height: 2.45rem;
+    float: left;
+    width: 24.67%;
+}
+.mycontainer-content .mycontainer-specific .mycontainer-specific-right img{
+    margin-top: -0.4rem;
+}
+.mycontainer-content .mycontainer-specific .mycontainer-specific-right .text1{
+    color: #333333;
+    font-size: 0.8rem;
+    margin-left: 10px;
+}
+.mycontainer-content .mycontainer-specific .mycontainer-specific-right .text2{
+    color: #333333;
+    font-size: 0.5rem;
+}

@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <title>设置</title>
+    <link rel="stylesheet" href="css/setting.css">
+    <script src="js/zepto.min.js"></script>
+    <script src="js/all.js"></script>
+</head>
+<body>
+
+    <div class="header">
+        <a href="javascript:history.back(-1)"><img class="img1" src="img/nav_icon_back_normal.png"></a>
+        <span>设置</span>
+    </div>
+
+    <div class="mycontainer">
+
+        <div class="mycontainer-content">
+            <div class="mycontainer-alarm"><span>开关</span></div>
+        </div>
+        <div class="mycontainer-contai">
+            <ul>
+                <li class="mycontainer-specific" id="close">
+                    <img src="img/set_btn_exit.png">
+                    <span class="text">关闭交换机</span>
+                </li>
+                <li class="mycontainer-specific" id="restart">
+                    <img src="img/set_btn_restart.png">
+                    <span class="text">重启交换机</span>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="mycontainer-content">
+            <div class="mycontainer-alarm"><span>设置</span></div>
+        </div>
+        <div class="mycontainer-contai">
+            <ul>
+                <a href="trafficSetting.html">
+                    <li class="mycontainer-specific">
+
+                            <div class="left">
+                                <span style="margin-left: 0.725rem;">流量控制</span>
+                            </div>
+                            <div class="right">
+                                <img src="img/btn_enter_normal.png" style="margin: 0">
+                            </div>
+                    </li>
+                </a>
+                <a href="alarmThresholdSetting.html">
+                    <li class="mycontainer-specific">
+                        <div class="left">
+                            <span style="margin-left: -3.25rem;">告警阈值</span>
+                        </div>
+                        <div class="right">
+                            <img src="img/btn_enter_normal.png" style="margin: 0">
+                        </div>
+                    </li>
+                </a>
+            </ul>
+        </div>
+
+        <div class="mycontainer-content">
+            <div class="mycontainer-alarm">
+                <span style="margin-left: -4rem">其他</span>
+            </div>
+        </div>
+        <div class="mycontainer-contai">
+            <ul>
+                <a href="thirdParty.html">
+                    <li class="mycontainer-specific">
+                        <div class="left">
+                            <span style="margin-left: 0.725rem;">第三方应用授权</span>
+                        </div>
+                        <div class="right">
+                            <img src="img/btn_enter_normal.png" style="margin: 0">
+                        </div>
+                    </li>
+                </a>
+            </ul>
+        </div>
+
+    </div>
+
+    <div id="bg"></div>
+    <div id="show">
+        <div>
+            <img src="img/pop_icon_restart.png">
+        </div>
+        <span>是否关闭交换机？<br>
+        设备关闭后需自行至机房重启。</span>
+        <div id="btn">
+            <button id="btn_yes">是</button><button id="btn_no">取消</button>
+        </div>
+    </div>
+    <div id="bg1"></div>
+
+    <div id="show1">
+        <div>
+            <img src="img/pop_icon_restart.png">
+        </div>
+        <span>是否重启交换机？</span>
+        <div id="btn1">
+            <button id="btn_yes1">是</button><button id="btn_no1">取消</button>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            /*关闭交换机*/
+            $("#close").bind("click",function () {
+                document.getElementById("bg").style.display ="block";
+                document.getElementById("show").style.display ="block";
+//                $('html,body').animate({scrollTop: '0px'}, 100);//因为页面很长，有纵向滚动条，先让页面滚动到最顶端，然后禁止滑动事件，这样可以使遮罩层锁住整个屏幕
+                $('#bg').bind("touchmove",function(e){
+                    e.preventDefault();
+                });
+            });
+            $("#btn_yes").bind("click",function () {
+                document.getElementById("bg").style.display ="none";
+                document.getElementById("show").style.display ="none";
+            });
+            $("#btn_no").bind("click",function () {
+                document.getElementById("bg").style.display ="none";
+                document.getElementById("show").style.display ="none";
+            });
+            /*重启交换机*/
+            $("#restart").bind("click",function () {
+                document.getElementById("bg1").style.display ="block";
+                document.getElementById("show1").style.display ="block";
+//                $('html,body').animate({scrollTop: '0px'}, 100);//因为页面很长，有纵向滚动条，先让页面滚动到最顶端，然后禁止滑动事件，这样可以使遮罩层锁住整个屏幕
+                $('#bg').bind("touchmove",function(e){
+                    e.preventDefault();
+                });
+            });
+            $("#btn_yes1").bind("click",function () {
+                document.getElementById("bg1").style.display ="none";
+                document.getElementById("show1").style.display ="none";
+            });
+            $("#btn_no1").bind("click",function () {
+                document.getElementById("bg1").style.display ="none";
+                document.getElementById("show1").style.display ="none";
+            });
+        });
+    </script>
+</body>
+</html>

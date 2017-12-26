@@ -1,0 +1,192 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html{
+    font-size: 40px;
+}
+a{
+    text-decoration: none;
+}
+.header{
+    position: fixed;
+    width: 100%;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    background: #1d5cb6;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    text-align: center;
+}
+.header span{
+    color: white;
+    font-size: 0.95rem;
+    line-height: 2.2rem;
+    /*display: block;*/
+    margin-left: 0.2rem;
+}
+.header .img1{
+    float: left;
+    width: 1.1rem;
+    margin-left: 0.75rem;
+    margin-top: 0.5rem;
+}
+.mycontainer{
+    width: 100%;
+    position: relative;/*此时要设置position*/
+    height: 100%;
+    max-height: 100%;
+    padding: 2.2rem 0 2.45rem 0;
+    box-sizing: border-box;
+    overflow: auto;
+    /*text-align: center;*/
+    line-height: 100%;
+}
+.mycontainer-contai{
+    width: 100%;
+}
+.mycontainer-content{
+    width: 100%;
+    /*padding-bottom: 2.45rem;*/
+}
+.mycontainer-content .mycontainer-alarm{
+    width: 100%;
+    height: 1.25rem;
+}
+.mycontainer-content .mycontainer-alarm span{
+    color: #333333;
+    font-size: 0.5rem;
+    line-height: 1.25rem;
+    margin-left: 0.75rem;
+}
+.mycontainer-contai .mycontainer-specific{
+    width: 100%;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    list-style: none;
+    margin: 0;
+}
+.mycontainer-contai .mycontainer-specific .mycontainer-specific-left{
+    /*border: 1px solid red;*/
+    width: 68.67%;
+    float: left;
+    border-top: 1px solid #adadad;
+}
+.mycontainer-contai .mycontainer-specific .mycontainer-specific-left span{
+    color: #333333;
+    font-size: 0.8rem;
+    margin-left: 0.75rem;
+}
+.mycontainer-contai .mycontainer-specific .mycontainer-specific-right{
+    border-top: 1px solid #adadad;
+    /*border: 1px solid red;*/
+    width: 30.3%;
+    float: left;
+    text-align: right;
+}
+.mycontainer-contai .mycontainer-specific .mycontainer-specific-right span{
+    margin-right: .5rem;
+    color: #333333;
+    font-size: 0.8rem;
+}
+.mycontainer-contai .mycontainer-specific .mycontainer-specific-right .company{
+    margin: 0;
+}
+.mycontainer-contai .mycontainer-specific .mycontainer-specific-right .num{
+    margin: 0;
+}
+.mycontainer-contai .mycontainer-specific .mycontainer-specific-right img{
+    margin-right: 1rem;
+}
+/*弹出层*/
+#bg{
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index:1001;
+    -moz-opacity: 0.7;
+    opacity:.70;
+    filter: alpha(opacity=70);
+}
+#show{
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 13%;
+    width: 74.67%;
+    height: 22.404%;
+    padding: 1.5rem 0rem 1rem;
+    border: 1px solid #adadad;
+    border-radius: 15px;
+    background-color: #f5f5f5;
+    z-index:1002;
+    overflow: auto;
+    text-align: center;
+    font-size: 0.8rem;
+}
+#btn{
+    width: 100%;
+    border: 1px solid white;
+    margin: auto;
+    text-align: center;
+}
+#btn button:first-child{
+    background: #1ab301;
+    color: white;
+    font-size: 0.8rem;
+    width: 4rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1.375rem;
+}
+#btn button:nth-child(2){
+    background: #c2c2c2;
+    color: white;
+    font-size: 0.8rem;
+    width: 4rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    border-radius: 10px;
+    margin-left: 1.875rem;
+    margin-top: 1.375rem;
+}
+#in{
+    width: 87.5%;
+    height: 2.075rem;
+    border-radius: 10px;
+    border: 1px solid #adadad;
+    margin: auto;
+    margin-top: 1.15rem;
+}
+#in img{
+    margin-top: 0.6rem;
+}
+#inp{
+    height: 100%;
+    width: 66.51%;
+    border: none;
+    margin-left: 0px;
+    float: left;
+    font-size: 0.8rem;
+    color: #999999;
+    outline: none;
+}
+#inp:active,#inp:hover{
+    border: none;
+}
+#company{
+    width: 23.43%;
+    height: 100%;
+    color: #235ab7;
+    border-left: 1px solid #adadad;
+    float: right;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 2.075rem;
+}

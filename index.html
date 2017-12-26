@@ -1,0 +1,624 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<!--<meta charset="UTF-8">-->
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta http-equiv="Cache-Control" content="no-transform">
+		<title>南山区教育局</title>
+		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/zepto.alert.css">
+		<!--<script src="js/jquery-2.1.1.min.js"></script>-->
+		<script src="js/zepto.min.js"></script>
+		<script src="js/all.js"></script>
+		<script type="text/javascript" src="js/zepto.alert.js"></script>
+		<script src="js/json2.js"></script>
+		<!--
+        	作者：2
+        	时间：2017-12-14
+        	描述：
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>-->
+		<script type="text/javascript">
+			//获取上行 值
+		</script>
+		<script type="text/javascript">
+			var auth;
+
+			// $.dialog();
+			//登陆公共参数
+			var jsondata = {
+				"jsonrpc": "2.0",
+				"method": "user.login",
+				"params": {
+					"user": "Admin",
+					"password": "admin"
+				},
+				"id": 1
+			}
+
+			//登陸獲取令牌
+			$.ajax({
+
+				type: "POST",
+
+				contentType: "application/json;charset=utf-8",
+
+				url: "http://123.207.235.243/api_jsonrpc.php",
+
+				data: JSON.stringify(jsondata),
+
+				dataType: "json",
+
+				success: function(result) {
+					auth = result.result;
+
+					//获取所有主机名///////////////////////////////////////////////////////////////////////////////////
+					//获取主机
+					var gethostList = {
+						"jsonrpc": "2.0",
+						"method": "hostgroup.get",
+						"params": {
+
+						},
+						"auth": auth,
+						"id": 1
+
+					}
+					$.ajax({
+
+							type: "POST",
+
+							contentType: "application/json;charset=utf-8",
+
+							url: "http://123.207.235.243/api_jsonrpc.php",
+
+							data: JSON.stringify(gethostList),
+
+							dataType: "json",
+
+							complete: function() {},
+
+							success: function(result) {
+
+								//  alert(result.result[1].name)
+								//获取主机名 循环添加到 ul中
+								for(var i = 0; i < result.result.length; i++) {
+									var industry = result.result[i];
+									$("#myul").append(" <li value=" + industry.name + ">" + industry.name + "</li>");
+								}
+							},
+							error: function(result, status) {
+
+								alert("网络登入错误;")
+
+							}
+
+						})
+						////////////////////////////////////////////////////////////////////////////////////////////////////////////////                     
+
+				},
+
+				error: function(result, status) {
+
+					alert("网络登入错误;")
+
+				}
+
+			});
+		</script>
+
+	</head>
+
+	<body>
+
+		<div class="header">
+			<!--头部  固定        开始-->
+			<div class="header-container">
+				<img src="img/nav_icon_school_normal.png">
+				<span id="school">选择主机群</span>
+				<img id="select" src="img/nav_btn_sign_normal.png" class="header-container-img2">
+				<div id="bg"></div>
+				<ul id="myul">
+
+				</ul>
+			</div>
+		</div>
+
+		<div class="mycontainer">
+			<!--内容-->
+			<div class="mycontainer-contai">
+				<div class="mycontainer-top">
+					<a href="monitoringInformation.html">
+						<div class="mycontainer-top-left">
+							<img src="img/home_icon_up.png">
+							<span class="text1"></span>
+							<span class="text2" id="inTotal">0</span>
+							<span class="text3">kb/s</span>
+						</div>
+						<div class="mycontainer-top-right">
+							<img src="img/home_icon_down.png">
+							<span class="text1"></span>
+							<span class="text2" id="outTotal">0</span>
+							<span class="text3">kb/s</span>
+						</div>
+					</a>
+				</div>
+				<div class="mycontainer-content">
+					<ul id="hostul">
+
+					</ul>
+
+				</div>
+			</div>
+		</div>
+		<!--内容     结束-->
+
+		<div class="footer">
+			<!--底部 固定  开始-->
+			<div class="footer-container div">
+				<div class="switchboard">
+					<a href="index.html"><img src="img/tab_icon_switch.png">
+						<span>交换机</span></a>
+				</div>
+				<div class="WIFI div">
+					<a href="wifi.html">
+						<img src="img/tab_icon_wifi.png">
+						<span>WIFI</span>
+					</a>
+				</div>
+				<div class="terminal div">
+					<a href="terminal.html">
+						<img src="img/tab_icon_pc.png">
+						<span>终端</span>
+					</a>
+				</div>
+				<div class="alarm-information div">
+					<a href="alarmInformation.html">
+						<img src="img/tab_icon_news.png">
+						<span>告警信息</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!--底部   结束-->
+
+		<script>
+			var schoolname;
+			var schooltemp;
+			
+			
+		$(function(){
+			
+		var JsonStr =localStorage.getItem("json");
+//alert(JsonStr)
+
+var Entitys = {
+    school:1,
+    name:1,//主机名
+    id: 1,//id
+    invalue:1,//上行
+    outvalue:1,//下行
+    auth:1
+};	
+
+ Entitys = JSON.parse(JsonStr);	
+ if(Entitys!=null){
+if(Entitys.school!=1){
+	//alert(Entitys.school);
+auth=Entitys.auth;
+$("#school").text(Entitys.school);
+//获取hostid 查询出 这个主机的 id 和可见名
+			$(function(){
+				//总流入,出变量
+				var inTotal = 0;
+				var outTotal = 0;
+				var gethost = {
+					"jsonrpc": "2.0",
+					"method": "hostgroup.get",
+					"params": {
+						"output": "extend",
+						//条件 : 群主名为 hostname  查询出 这个主机的 id 和可见名
+						"filter": {
+							"name": [
+								Entitys.school
+							]
+						},
+						"selectHosts": ["hostid", "name"]
+					},
+					"auth": Entitys.auth,
+					"id": 1
+
+				};
+
+				$.ajax({
+
+					type: "post",
+
+					contentType: "application/json;charset=utf-8",
+
+					url: "http://123.207.235.243/api_jsonrpc.php",
+
+					data: JSON.stringify(gethost),
+
+					dataType: "json",
+					async: false,
+
+					success: function(result) {
+
+						//获取学校群名 循环添加到 ul中
+						for(var i = 0; i < result.result.length; i++) {
+							var industry = result.result[i];
+							//获取主机hostid   result.result[0].hosts 是学校群集合
+							for(var j = 0; j < result.result[0].hosts.length; j++) {
+								//终端主机名
+								var hostName = result.result[0].hosts[j].name;
+//alert(result.result[0].hosts[j].hostid)
+								//主机上行流量值
+								invalue = (getinvalue(result.result[0].hosts[j].hostid) / 1000).toFixed(1);
+
+								//主机下行流量值
+								var outvalue;
+								outvalue = (getoutvalue(result.result[0].hosts[j].hostid) / 1000).toFixed(1);
+
+								inTotal = inTotal + invalue * 1;
+
+								outTotal = outTotal + outvalue * 1;
+
+								$("#hostul").append("<a href='twoStageSwitch.html'>"
+
+									+
+									"<li class='mycontainer-specific'>"
+
+									+
+									"<div class='mycontainer-specific-left'>"
+
+									+
+									"<img src='img/home_icon_switch.png'>" +
+									//"<a href='javascript:void(0);' onclick=test("+hostName+ ","+result.result[0].hosts[j].hostid+")>" +
+"<a href='javascript:void(0);' value=" + hostName + " onclick=test('" + hostName + "','" + result.result[0].hosts[j].hostid + "','" + invalue + "','" +outvalue +"','"+Entitys.school+"')>" +
+									"<span>" + hostName + "</span></a>" +
+									"	</div>" +
+									"<div class='mycontainer-specific-middle'>" +
+									"<img src='img/home_icon_up_green.png'>" +
+									"<span class='text1'>" + invalue + "</span>" +
+									"<span class='text2'>" + 'kb/s' + "</span>" +
+									"</div>" +
+									"<div class='mycontainer-specific-right'>"
+
+									+
+									"<img src='img/home_icon_down_red.png'>" +
+									"	<span class='text1'>" + outvalue + "</span>" +
+									"<span class='text2'>" + 'kb/s' + "</span>" +
+									"</div>" +
+									"</li></a>");
+
+							}
+
+						}
+
+					},
+					error: function(result, status) {
+
+						alert("网络登入错误;")
+
+					}
+
+				})
+
+				$("#inTotal").text(inTotal.toFixed(1));
+				$("#outTotal").text(outTotal.toFixed(1));
+			});
+
+
+
+}
+}
+});
+			/*上面选择学校的地方*/
+			$("#select").bind('click', function() {
+				//            alert(1);
+				document.getElementById("bg").style.display = "block";
+
+				document.getElementById("myul").style.display = "block";
+				$("#myul li").bind('click', function() {
+
+					
+
+					$("#school").text($(this).text());
+					schoolname = $(this).text();
+					
+					document.getElementById("bg").style.display = "none";
+					document.getElementById("myul").style.display = "none";
+
+					if(schoolname != "选择主机群") {
+						//清除当前的ul 值
+						$("#hostul li").remove();
+						gethostid();
+					}
+
+				});
+			});
+
+			//获取hostid 查询出 这个主机的 id 和可见名
+			function gethostid() {
+				//总流入,出变量
+				var inTotal = 0;
+				var outTotal = 0;
+				var gethost = {
+					"jsonrpc": "2.0",
+					"method": "hostgroup.get",
+					"params": {
+						"output": "extend",
+						//条件 : 群主名为 hostname  查询出 这个主机的 id 和可见名
+						"filter": {
+							"name": [
+								schoolname
+							]
+						},
+						"selectHosts": ["hostid", "name"]
+					},
+					"auth": auth,
+					"id": 1
+
+				};
+
+				$.ajax({
+
+					type: "post",
+
+					contentType: "application/json;charset=utf-8",
+
+					url: "http://123.207.235.243/api_jsonrpc.php",
+
+					data: JSON.stringify(gethost),
+
+					dataType: "json",
+					async: false,
+
+					success: function(result) {
+
+						//获取学校群名 循环添加到 ul中
+						for(var i = 0; i < result.result.length; i++) {
+							var industry = result.result[i];
+							//获取主机hostid   result.result[0].hosts 是学校群集合
+							for(var j = 0; j < result.result[0].hosts.length; j++) {
+								//终端主机名
+								var hostName = result.result[0].hosts[j].name;
+
+								//主机上行流量值
+								invalue = (getinvalue(result.result[0].hosts[j].hostid) / 1000).toFixed(1);
+
+								//主机下行流量值
+								var outvalue;
+								outvalue = (getoutvalue(result.result[0].hosts[j].hostid) / 1000).toFixed(1);
+
+								inTotal = inTotal + invalue * 1;
+
+								outTotal = outTotal + outvalue * 1;
+
+								$("#hostul").append("<a href='twoStageSwitch.html'>"
+
+									+
+									"<li class='mycontainer-specific'>"
+
+									+
+									"<div class='mycontainer-specific-left'>"
+
+									+
+									"<img src='img/home_icon_switch.png'>" +
+									//"<a href='javascript:void(0);' onclick=test("+hostName+ ","+result.result[0].hosts[j].hostid+")>" +
+"<a href='javascript:void(0);' value=" + hostName + " onclick=test('" + hostName + "','" + result.result[0].hosts[j].hostid + "','" + invalue + "','" +outvalue +"','"+schoolname+"')>" +
+									"<span>" + hostName + "</span></a>" +
+									"	</div>" +
+									"<div class='mycontainer-specific-middle'>" +
+									"<img src='img/home_icon_up_green.png'>" +
+									"<span class='text1'>" + invalue + "</span>" +
+									"<span class='text2'>" + 'kb/s' + "</span>" +
+									"</div>" +
+									"<div class='mycontainer-specific-right'>"
+
+									+
+									"<img src='img/home_icon_down_red.png'>" +
+									"	<span class='text1'>" + outvalue + "</span>" +
+									"<span class='text2'>" + 'kb/s' + "</span>" +
+									"</div>" +
+									"</li></a>");
+
+							}
+
+						}
+
+					},
+					error: function(result, status) {
+
+						alert("网络登入错误;")
+
+					}
+
+				})
+
+				$("#inTotal").text(inTotal.toFixed(1));
+				$("#outTotal").text(outTotal.toFixed(1));
+			}
+
+			function test(hostName, hostid, invalue, outvalue, school) {
+
+				var Entity = {
+					school: school, //学校
+					name: hostName, //主机名
+					id: hostid, //id
+					invalue: invalue, //上行
+					outvalue: outvalue, //下行
+					auth: auth
+				};
+				//alert(JSON.stringify(Entity));
+				localStorage.setItem('hostName', schooltemp);
+				localStorage.setItem('json', JSON.stringify(Entity));
+				window.location = "monitoringInformation.html";
+
+			}
+
+			//取上行值方法 
+			function getinvalue(hostid) {
+				var flag;
+				var invalue;
+				var gethostinfo = {
+					"jsonrpc": "2.0",
+					"method": "item.get",
+					"params": {
+						"output": "extend",
+						"hostids": hostid, //result.result[0].hosts[j].hostid,
+						"search": {
+							"key_": "net.if.in"
+						},
+						"sortfield": "name"
+					},
+					"auth": auth,
+					"id": 1
+				}
+				$.ajax({
+
+					type: "post",
+					async: false,
+					contentType: "application/json;charset=utf-8",
+
+					url: "http://123.207.235.243/api_jsonrpc.php",
+
+					data: JSON.stringify(gethostinfo),
+
+					dataType: "json",
+
+					success: function(result) {
+
+						if(result != null) {
+
+							invalue = result.result[0].lastvalue;
+
+							if(invalue == "0") {
+
+								for(var ii = 1; ii < result.result.length; ii++) {
+
+									if(result.result[ii].lastvalue != "0") {
+										//alert("结果"+result.result[ii].lastvalue)
+
+										invalue = result.result[ii].lastvalue;
+										break;
+									} else {
+
+										invalue = result.result[0].lastvalue;
+									}
+
+								}
+
+							}
+
+							flag = true;
+						} else {
+							invalue = "--";
+							flag = false;
+						}
+						//data.result[0].lastvalue;
+
+						//		alert(result.result[0].hosts[j].hostid +result.result[0].hosts[j].host);
+
+					}
+
+				});
+
+				if(flag) {
+					return invalue;
+				} else {
+					alert("返回值错误");
+					return invalue;
+				}
+
+			};
+
+			// 取下行值
+			function getoutvalue(hostid) {
+				var flag;
+				var outvalue;
+				var gethostinfo = {
+					"jsonrpc": "2.0",
+					"method": "item.get",
+					"params": {
+						"output": "extend",
+						"hostids": hostid, //result.result[0].hosts[j].hostid,
+						"search": {
+							"key_": "net.if.out"
+						},
+						"sortfield": "name"
+					},
+					"auth": auth,
+					"id": 1
+				}
+				$.ajax({
+
+					type: "post",
+					async: false,
+					contentType: "application/json;charset=utf-8",
+
+					url: "http://123.207.235.243/api_jsonrpc.php",
+
+					data: JSON.stringify(gethostinfo),
+
+					dataType: "json",
+
+					success: function(result) {
+
+						if(result != null) {
+							outvalue = result.result[0].lastvalue;
+							if(outvalue == "0") {
+
+								for(var ii = 1; ii < result.result.length; ii++) {
+
+									while(result.result[ii].lastvalue != "0") {
+										//alert("结果"+result.result[ii].lastvalue)
+
+										outvalue = result.result[ii].lastvalue;
+										break;
+									}
+
+								}
+
+							}
+							flag = true;
+						} else {
+							outvalue = "--";
+							flag = false;
+						}
+
+					}
+
+				});
+
+				if(flag) {
+					return outvalue;
+				} else {
+					alert("返回值错误");
+					return outvalue;
+				}
+
+			};
+
+			/*底部导航*/
+			$(function() {
+				$(".footer-container div").eq(0).css({
+					background: "#1e69d2"
+				});
+				$(".footer-container div").click(function() {
+					$(".footer-container div").css({
+						background: "#1d5cb6"
+					});
+					$(this).css({
+						background: "#1e69d2"
+					});
+				});
+			
+			})
+		</script>
+
+	</body>
+
+</html>

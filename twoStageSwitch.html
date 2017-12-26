@@ -1,0 +1,428 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <title>二级交换机</title>
+    <link rel="stylesheet" href="css/twoStageSwitch.css">
+    <script src="js/zepto.min.js"></script>
+    <script src="js/all.js"></script>
+</head>
+<body>
+
+
+    <div class="header">
+        <a href="javascript:history.back(-1)"><img class="img1" src="img/nav_icon_back_normal.png"></a>
+        <span>交换机1号</span>
+        <img id="write" class="img2" src="img/top_btn_changename_normal.png">
+    </div>
+
+    <div class="mycontainer">
+        <div class="mycontainer-contai">
+            <div class="mycontainer-top">
+                <div class="left">
+                    <div>
+                        <img src="img/home_icon_up.png">
+                    </div>
+                    <div style="margin-top: 0.7rem">
+                        <span class="text1">0</span>
+                        <span class="text2">124.3</span>
+                        <span class="text3">kb/s</span>
+                    </div>
+                </div>
+                <div class="middle">
+                    <div>
+                        <span class="text">今日流量</span>
+                    </div>
+                    <div style="margin-top: 0.75rem">
+                        <span class="text1">0</span>
+                        <span class="text2">195.5</span>
+                        <span class="text3">M</span>
+                    </div>
+                </div>
+                <div class="right">
+                    <div>
+                        <img src="img/home_icon_down.png">
+                    </div>
+                    <div style="margin-top: 0.7rem">
+                        <span class="text1">00</span>
+                        <span class="text2">94.3</span>
+                        <span class="text3">kb/s</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mycontainer-content">
+                <ul>
+                    <a href="terminalSpecification.html"><li class="mycontainer-specific">
+                        <div class="mycontainer-specific-left">
+                            <img src="img/list_icon_camera.png">
+                            <span>视频终端</span>
+                        </div>
+                        <div class="mycontainer-specific-middle">
+                            <img src="img/home_icon_up_green.png">
+                            <span class="text1">124</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                        <div class="mycontainer-specific-right">
+                            <img src="img/home_icon_down_red.png">
+                            <span class="text1">124</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                    </li></a>
+
+                    <li class="mycontainer-specific">
+                        <div class="mycontainer-specific-left">
+                            <img src="img/list_icon_camera.png">
+                            <span>会议室监控</span>
+                        </div>
+                        <div class="mycontainer-specific-middle">
+                            <img src="img/home_icon_up_green.png">
+                            <span class="text1">34</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                        <div class="mycontainer-specific-right">
+                            <img src="img/home_icon_down_red.png">
+                            <span class="text1">61</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                    </li>
+
+                    <li class="mycontainer-specific">
+                        <div class="mycontainer-specific-left">
+                            <img src="img/list_icon_ups.png">
+                            <span>应急用电</span>
+                        </div>
+                        <div class="mycontainer-specific-middle">
+                            <img src="img/home_icon_up_green.png">
+                            <span class="text1">10</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                        <div class="mycontainer-specific-right">
+                            <img src="img/home_icon_down_red.png">
+                            <span class="text1">93</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                    </li>
+
+                    <li class="mycontainer-specific">
+                        <div class="mycontainer-specific-left">
+                            <img src="img/list_icon_led.png">
+                            <span>LED</span>
+                        </div>
+                        <div class="mycontainer-specific-middle">
+                            <img src="img/home_icon_up_green.png">
+                            <span class="text1">124</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                        <div class="mycontainer-specific-right">
+                            <img src="img/home_icon_down_red.png">
+                            <span class="text1">124</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                    </li>
+
+                    <li class="mycontainer-specific">
+                        <div class="mycontainer-specific-left">
+                            <img src="img/list_icon_camera.png">
+                            <span>视频终端</span>
+                        </div>
+                        <div class="mycontainer-specific-middle">
+                            <img src="img/home_icon_up_green.png">
+                            <span class="text1">124</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                        <div class="mycontainer-specific-right">
+                            <img src="img/home_icon_down_red.png">
+                            <span class="text1">124</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                    </li>
+
+                    <li class="mycontainer-specific">
+                        <div class="mycontainer-specific-left">
+                            <img src="img/list_icon_camera.png">
+                            <span>会议室监控</span>
+                        </div>
+                        <div class="mycontainer-specific-middle">
+                            <img src="img/home_icon_up_green.png">
+                            <span class="text1">34</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                        <div class="mycontainer-specific-right">
+                            <img src="img/home_icon_down_red.png">
+                            <span class="text1">61</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                    </li>
+
+                    <li class="mycontainer-specific">
+                        <div class="mycontainer-specific-left">
+                            <img src="img/list_icon_ups.png">
+                            <span>应急用电</span>
+                        </div>
+                        <div class="mycontainer-specific-middle">
+                            <img src="img/home_icon_up_green.png">
+                            <span class="text1">10</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                        <div class="mycontainer-specific-right">
+                            <img src="img/home_icon_down_red.png">
+                            <span class="text1">93</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                    </li>
+
+                    <li class="mycontainer-specific">
+                        <div class="mycontainer-specific-left">
+                            <img src="img/list_icon_led.png">
+                            <span>LED</span>
+                        </div>
+                        <div class="mycontainer-specific-middle">
+                            <img src="img/home_icon_up_green.png">
+                            <span class="text1">124</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                        <div class="mycontainer-specific-right">
+                            <img src="img/home_icon_down_red.png">
+                            <span class="text1">124</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                    </li>
+
+                    <li class="mycontainer-specific">
+                        <div class="mycontainer-specific-left">
+                            <img src="img/list_icon_camera.png">
+                            <span>视频终端</span>
+                        </div>
+                        <div class="mycontainer-specific-middle">
+                            <img src="img/home_icon_up_green.png">
+                            <span class="text1">124</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                        <div class="mycontainer-specific-right">
+                            <img src="img/home_icon_down_red.png">
+                            <span class="text1">124</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                    </li>
+
+                    <li class="mycontainer-specific">
+                        <div class="mycontainer-specific-left">
+                            <img src="img/list_icon_camera.png">
+                            <span>会议室监控</span>
+                        </div>
+                        <div class="mycontainer-specific-middle">
+                            <img src="img/home_icon_up_green.png">
+                            <span class="text1">34</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                        <div class="mycontainer-specific-right">
+                            <img src="img/home_icon_down_red.png">
+                            <span class="text1">61</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                    </li>
+
+                    <li class="mycontainer-specific">
+                        <div class="mycontainer-specific-left">
+                            <img src="img/list_icon_ups.png">
+                            <span>应急用电</span>
+                        </div>
+                        <div class="mycontainer-specific-middle">
+                            <img src="img/home_icon_up_green.png">
+                            <span class="text1">10</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                        <div class="mycontainer-specific-right">
+                            <img src="img/home_icon_down_red.png">
+                            <span class="text1">93</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                    </li>
+
+                    <li class="mycontainer-specific">
+                        <div class="mycontainer-specific-left">
+                            <img src="img/list_icon_led.png">
+                            <span>LED</span>
+                        </div>
+                        <div class="mycontainer-specific-middle">
+                            <img src="img/home_icon_up_green.png">
+                            <span class="text1">124</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                        <div class="mycontainer-specific-right">
+                            <img src="img/home_icon_down_red.png">
+                            <span class="text1">124</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                    </li>
+                    <li class="mycontainer-specific">
+                        <div class="mycontainer-specific-left">
+                            <img src="img/list_icon_camera.png">
+                            <span>视频终端</span>
+                        </div>
+                        <div class="mycontainer-specific-middle">
+                            <img src="img/home_icon_up_green.png">
+                            <span class="text1">124</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                        <div class="mycontainer-specific-right">
+                            <img src="img/home_icon_down_red.png">
+                            <span class="text1">124</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                    </li>
+
+                    <li class="mycontainer-specific">
+                        <div class="mycontainer-specific-left">
+                            <img src="img/list_icon_camera.png">
+                            <span>会议室监控</span>
+                        </div>
+                        <div class="mycontainer-specific-middle">
+                            <img src="img/home_icon_up_green.png">
+                            <span class="text1">34</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                        <div class="mycontainer-specific-right">
+                            <img src="img/home_icon_down_red.png">
+                            <span class="text1">61</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                    </li>
+
+                    <li class="mycontainer-specific">
+                        <div class="mycontainer-specific-left">
+                            <img src="img/list_icon_ups.png">
+                            <span>应急用电</span>
+                        </div>
+                        <div class="mycontainer-specific-middle">
+                            <img src="img/home_icon_up_green.png">
+                            <span class="text1">10</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                        <div class="mycontainer-specific-right">
+                            <img src="img/home_icon_down_red.png">
+                            <span class="text1">93</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                    </li>
+
+                    <li class="mycontainer-specific">
+                        <div class="mycontainer-specific-left">
+                            <img src="img/list_icon_led.png">
+                            <span>LED</span>
+                        </div>
+                        <div class="mycontainer-specific-middle">
+                            <img src="img/home_icon_up_green.png">
+                            <span class="text1">124</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                        <div class="mycontainer-specific-right">
+                            <img src="img/home_icon_down_red.png">
+                            <span class="text1">124</span>
+                            <span class="text2">kb/s</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer"><!--底部 固定  开始-->
+        <div class="footer-container div">
+            <div class="switchboard">
+                <a href="index.html" ><img src="img/tab_icon_switch.png">
+                    <span>交换机</span></a>
+            </div>
+            <div class="WIFI div">
+                <a href="wifi.html" >
+                    <img src="img/tab_icon_wifi.png">
+                    <span>WIFI</span>
+                </a>
+            </div>
+            <div class="terminal div">
+                <a href="terminal.html" >
+                    <img src="img/tab_icon_pc.png">
+                    <span>终端</span>
+                </a>
+            </div>
+            <div class="alarm-information div">
+                <a href="alarmInformation.html">
+                    <img src="img/tab_icon_news.png">
+                    <span>告警信息</span>
+                </a>
+            </div>
+        </div>
+    </div><!--底部   结束-->
+
+    <div id="bg"></div>
+    <div id="show">
+        <span id="title">设备名称</span>
+        <div id="in">
+            <input type="text" value="" id="inp"><img id="cleartext" src="img/btn_cleartext.png">
+        </div>
+        <div id="btn">
+            <button id="btn_yes">取消</button><button id="btn_no">保存</button>
+        </div>
+    </div>
+    <script>
+ /*   var  Entity;
+    var userJsonStr = sessionStorage.getItem('json');
+ Entity = JSON.parse(userJsonStr);*/
+if(window.sessionStorage)
+alert(sessionStorage.getItem('abc')+localStorage.getItem('bb')); 
+
+
+
+        $("#inp").click(function () {
+            $("#btn_no").css({
+                background:"#1ab301",
+                color:"#ffffff"
+            });
+            /*保存*/
+//            if(!$("#inp").val()){
+                console.info("变化了");
+                $("#btn_no").removeAttr("disabled","disabled");
+                $("#btn_no").bind("click",function () {
+                    $("#write").prev().text($("#inp").val());
+                    document.getElementById("bg").style.display ="none";
+                    document.getElementById("show").style.display ="none";
+                    $("#btn_no").css({
+                        background:"#ebebeb",
+                        color:"#999999"
+                    });
+                });
+//            }else {
+                $("#inp").focus();
+                $("#btn_no").attr("disabled","disabled");
+//            }
+
+        });
+        /*点击×按钮时*/
+        $("#cleartext").bind('click',function () {
+            $("#inp").val("");
+        });
+        $("#write").bind('click',function () {
+            document.getElementById("bg").style.display ="block";
+            document.getElementById("show").style.display ="block";
+            $("#btn_no").attr("disabled","disabled");
+            $("#inp").val($(this).prev().text());
+            $('#bg').bind("touchmove",function(e){
+                e.preventDefault();
+            });
+            /*取消*/
+            $("#btn_yes").bind("click",function () {
+                $("#write").prev().find(".num").text($("#write").prev().find(".num").text());
+                document.getElementById("bg").style.display ="none";
+                document.getElementById("show").style.display ="none";
+                $("#btn_no").css({
+                    background:"#ebebeb",
+                    color:"#999999"
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>

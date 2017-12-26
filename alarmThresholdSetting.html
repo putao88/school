@@ -1,0 +1,465 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <title>告警阈值设置</title>
+    <link rel="stylesheet" href="css/alarmThresholdSetting.css">
+    <script src="js/zepto.min.js"></script>
+    <script src="js/all.js"></script>
+</head>
+<body>
+
+
+    <div class="header">
+        <a href="javascript:history.back(-1)"><img class="img1" src="img/nav_icon_back_normal.png"></a>
+        <span>告警阈值设置</span>
+        <!--<img class="img2" src="img/nav_icon_set_normal.png">-->
+    </div>
+
+    <div class="mycontainer">
+        <div class="mycontainer-contai">
+            <!--<div class="mycontainer-content">
+                <div class="mycontainer-alarm"><span>权限设置</span></div>
+            </div>-->
+            <ul>
+                <li class="mycontainer-specific">
+                    <div class="mycontainer-specific-left">
+                        <span class="title">CPU利用率</span>
+                    </div>
+                    <div class="mycontainer-specific-right">
+                        <span><span class="num">25</span><span class="company">%</span></span>
+                        <img id="write1" src="img/list_btn_changeset_normal.png">
+                    </div>
+                </li>
+
+                <li class="mycontainer-specific">
+                    <div class="mycontainer-specific-left">
+                        <span class="title">内存利用率</span>
+                    </div>
+                    <div class="mycontainer-specific-right">
+                        <span><span class="num">25</span><span class="company">%</span></span>
+                        <img id="write2" src="img/list_btn_changeset_normal.png">
+                    </div>
+                </li>
+
+                <li class="mycontainer-specific">
+                    <div class="mycontainer-specific-left">
+                        <span class="title">响应时间</span>
+                    </div>
+                    <div class="mycontainer-specific-right">
+                        <span style="margin-right: .8rem;"><span class="num">25</span><span class="company">s</span></span>
+                        <img id="write3" src="img/list_btn_changeset_normal.png">
+                    </div>
+                </li>
+
+                <li class="mycontainer-specific">
+                    <div class="mycontainer-specific-left">
+                        <span class="title">当日掉包率</span>
+                    </div>
+                    <div class="mycontainer-specific-right">
+                        <span><span class="num">25</span><span class="company">%</span></span>
+                        <img id="write4" src="img/list_btn_changeset_normal.png">
+                    </div>
+                </li>
+
+                <li class="mycontainer-specific">
+                    <div class="mycontainer-specific-left">
+                        <span class="title">接收速率</span>
+                    </div>
+                    <div class="mycontainer-specific-right">
+                        <span><span class="num">25</span><span class="company">kb/s</span></span>
+                        <img id="write5" src="img/list_btn_changeset_normal.png">
+                    </div>
+                </li>
+
+                <li class="mycontainer-specific">
+                    <div class="mycontainer-specific-left">
+                        <span class="title">发送速率</span>
+                    </div>
+                    <div class="mycontainer-specific-right">
+                        <span><span class="num">25</span><span class="company">kb/s</span></span>
+                        <img id="write6" src="img/list_btn_changeset_normal.png">
+                    </div>
+                </li>
+
+                <li class="mycontainer-specific">
+                    <div class="mycontainer-specific-left">
+                        <span class="title">接收宽带利用率</span>
+                    </div>
+                    <div class="mycontainer-specific-right">
+                        <span><span class="num">25</span><span class="company">kb/s</span></span>
+                        <img id="write7" src="img/list_btn_changeset_normal.png">
+                    </div>
+                </li>
+
+                <li class="mycontainer-specific">
+                    <div class="mycontainer-specific-left">
+                        <span class="title">发送宽带利用率</span>
+                    </div>
+                    <div class="mycontainer-specific-right">
+                        <span><span class="num">25</span><span class="company">kb/s</span></span>
+                        <img id="write9" src="img/list_btn_changeset_normal.png">
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="bg"></div>
+    <div id="show">
+        <span id="title"></span>
+        <div id="in">
+            <input type="text" value="" id="inp"><img id="cleartext" src="img/btn_cleartext.png"><div id="company"></div>
+        </div>
+        <div id="btn">
+            <button id="btn_yes">取消</button><button id="btn_no">保存</button>
+        </div>
+    </div>
+    <script>
+        $("#inp").click(function () {
+            $("#btn_no").css({
+                background:"#1ab301",
+                color:"#ffffff"
+            });
+            /*保存*/
+            console.info("变化了");
+            $("#btn_no").removeAttr("disabled","disabled");
+            $("#btn_no").bind("click",function () {
+                $("#write1").prev().find(".num").text($("#inp").val());
+                document.getElementById("bg").style.display ="none";
+                document.getElementById("show").style.display ="none";
+                $("#btn_no").css({
+                    background:"#ebebeb",
+                    color:"#999999"
+                });
+            });
+            /*保存*/
+            $("#btn_no").bind("click",function () {
+                $("#write2").prev().find(".num").text($("#inp").val());
+                document.getElementById("bg").style.display ="none";
+                document.getElementById("show").style.display ="none";
+                $("#btn_no").css({
+                    background:"#ebebeb",
+                    color:"#999999"
+                });
+            });
+            /*保存*/
+            $("#btn_no").bind("click",function () {
+                $("#write3").prev().find(".num").text($("#inp").val());
+                document.getElementById("bg").style.display ="none";
+                document.getElementById("show").style.display ="none";
+                $("#btn_no").css({
+                    background:"#ebebeb",
+                    color:"#999999"
+                });
+            });
+            /*保存*/
+            $("#btn_no").bind("click",function () {
+                $("#write4").prev().find(".num").text($("#inp").val());
+                document.getElementById("bg").style.display ="none";
+                document.getElementById("show").style.display ="none";
+                $("#btn_no").css({
+                    background:"#ebebeb",
+                    color:"#999999"
+                });
+            });
+            /*保存*/
+            $("#btn_no").bind("click",function () {
+                $("#write5").prev().find(".num").text($("#inp").val());
+                document.getElementById("bg").style.display ="none";
+                document.getElementById("show").style.display ="none";
+                $("#btn_no").css({
+                    background:"#ebebeb",
+                    color:"#999999"
+                });
+            });
+            /*保存*/
+            $("#btn_no").bind("click",function () {
+                $("#write6").prev().find(".num").text($("#inp").val());
+                document.getElementById("bg").style.display ="none";
+                document.getElementById("show").style.display ="none";
+                $("#btn_no").css({
+                    background:"#ebebeb",
+                    color:"#999999"
+                });
+            });
+            /*保存*/
+            $("#btn_no").bind("click",function () {
+                $("#write7").prev().find(".num").text($("#inp").val());
+                document.getElementById("bg").style.display ="none";
+                document.getElementById("show").style.display ="none";
+                $("#btn_no").css({
+                    background:"#ebebeb",
+                    color:"#999999"
+                });
+            });
+            /*保存*/
+            $("#btn_no").bind("click",function () {
+                $("#write8").prev().find(".num").text($("#inp").val());
+                document.getElementById("bg").style.display ="none";
+                document.getElementById("show").style.display ="none";
+                $("#btn_no").css({
+                    background:"#ebebeb",
+                    color:"#999999"
+                });
+            });
+            /*保存*/
+            $("#btn_no").bind("click",function () {
+                $("#write9").prev().find(".num").text($("#inp").val());
+                document.getElementById("bg").style.display ="none";
+                document.getElementById("show").style.display ="none";
+                $("#btn_no").css({
+                    background:"#ebebeb",
+                    color:"#999999"
+                });
+            });
+        });
+        /*点击×按钮时*/
+        $("#cleartext").bind('click',function () {
+            $("#inp").val("");
+        });
+        $("#write1").bind('click',function () {
+            document.getElementById("bg").style.display ="block";
+            document.getElementById("show").style.display ="block";
+            $("#btn_no").attr("disabled","disabled");
+            /*上面的标题*/
+            $("#title").text($(this).parent().prev().find(".title").text());
+            console.info($(this).parent().prev().find(".title").text());
+            /*输入框里面的值*/
+            $("#inp").val($(this).prev().find(".num").text());
+            /*单位显示*/
+            $("#company").text($(this).prev().find(".company").text());
+            console.info($(this).prev().find(".company").text());
+            $('#bg').bind("touchmove",function(e){
+                e.preventDefault();
+            });
+            /*取消*/
+            $("#btn_yes").bind("click",function () {
+                $("#write1").prev().find(".num").text($("#write1").prev().find(".num").text());
+                document.getElementById("bg").style.display ="none";
+                document.getElementById("show").style.display ="none";
+                $("#btn_no").css({
+                    background:"#ebebeb",
+                    color:"#999999"
+                });
+            });
+
+        });
+
+        $("#write2").bind('click',function () {
+            document.getElementById("bg").style.display ="block";
+            document.getElementById("show").style.display ="block";
+            /*上面的标题*/
+            $("#title").text($(this).parent().prev().find(".title").text());
+            console.info($(this).parent().prev().find(".title").text());
+            /*输入框里面的值*/
+            $("#inp").val($(this).prev().find(".num").text());
+            /*单位显示*/
+            $("#company").text($(this).prev().find(".company").text());
+            console.info($(this).prev().find(".company").text());
+            $('#bg').bind("touchmove",function(e){
+                e.preventDefault();
+            });
+            /*取消*/
+            $("#btn_yes").bind("click",function () {
+                $("#write2").prev().find(".num").text($("#write2").prev().find(".num").text());
+                document.getElementById("bg").style.display ="none";
+                document.getElementById("show").style.display ="none";
+                $("#btn_no").css({
+                    background:"#ebebeb",
+                    color:"#999999"
+                });
+            });
+
+        });
+
+        $("#write3").bind('click',function () {
+            document.getElementById("bg").style.display ="block";
+            document.getElementById("show").style.display ="block";
+            /*上面的标题*/
+            $("#title").text($(this).parent().prev().find(".title").text());
+            console.info($(this).parent().prev().find(".title").text());
+            /*输入框里面的值*/
+            $("#inp").val($(this).prev().find(".num").text());
+            /*单位显示*/
+            $("#company").text($(this).prev().find(".company").text());
+            console.info($(this).prev().find(".company").text());
+            $('#bg').bind("touchmove",function(e){
+                e.preventDefault();
+            });
+            /*取消*/
+            $("#btn_yes").bind("click",function () {
+                $("#write3").prev().find(".num").text($("#write3").prev().find(".num").text());
+                document.getElementById("bg").style.display ="none";
+                document.getElementById("show").style.display ="none";
+                $("#btn_no").css({
+                    background:"#ebebeb",
+                    color:"#999999"
+                });
+            });
+
+        });
+        $("#write4").bind('click',function () {
+            document.getElementById("bg").style.display ="block";
+            document.getElementById("show").style.display ="block";
+            /*上面的标题*/
+            $("#title").text($(this).parent().prev().find(".title").text());
+            console.info($(this).parent().prev().find(".title").text());
+            /*输入框里面的值*/
+            $("#inp").val($(this).prev().find(".num").text());
+            /*单位显示*/
+            $("#company").text($(this).prev().find(".company").text());
+            console.info($(this).prev().find(".company").text());
+            $('#bg').bind("touchmove",function(e){
+                e.preventDefault();
+            });
+            /*取消*/
+            $("#btn_yes").bind("click",function () {
+                $("#write4").prev().find(".num").text($("#write4").prev().find(".num").text());
+                document.getElementById("bg").style.display ="none";
+                document.getElementById("show").style.display ="none";
+                $("#btn_no").css({
+                    background:"#ebebeb",
+                    color:"#999999"
+                });
+            });
+
+        });
+        $("#write5").bind('click',function () {
+            document.getElementById("bg").style.display ="block";
+            document.getElementById("show").style.display ="block";
+            /*上面的标题*/
+            $("#title").text($(this).parent().prev().find(".title").text());
+            console.info($(this).parent().prev().find(".title").text());
+            /*输入框里面的值*/
+            $("#inp").val($(this).prev().find(".num").text());
+            /*单位显示*/
+            $("#company").text($(this).prev().find(".company").text());
+            console.info($(this).prev().find(".company").text());
+            $('#bg').bind("touchmove",function(e){
+                e.preventDefault();
+            });
+            /*取消*/
+            $("#btn_yes").bind("click",function () {
+                $("#write5").prev().find(".num").text($("#write5").prev().find(".num").text());
+                document.getElementById("bg").style.display ="none";
+                document.getElementById("show").style.display ="none";
+                $("#btn_no").css({
+                    background:"#ebebeb",
+                    color:"#999999"
+                });
+            });
+
+        });
+        $("#write6").bind('click',function () {
+            document.getElementById("bg").style.display ="block";
+            document.getElementById("show").style.display ="block";
+            /*上面的标题*/
+            $("#title").text($(this).parent().prev().find(".title").text());
+            console.info($(this).parent().prev().find(".title").text());
+            /*输入框里面的值*/
+            $("#inp").val($(this).prev().find(".num").text());
+            /*单位显示*/
+            $("#company").text($(this).prev().find(".company").text());
+            console.info($(this).prev().find(".company").text());
+            $('#bg').bind("touchmove",function(e){
+                e.preventDefault();
+            });
+            /*取消*/
+            $("#btn_yes").bind("click",function () {
+                $("#write6").prev().find(".num").text($("#write6").prev().find(".num").text());
+                document.getElementById("bg").style.display ="none";
+                document.getElementById("show").style.display ="none";
+                $("#btn_no").css({
+                    background:"#ebebeb",
+                    color:"#999999"
+                });
+            });
+
+        });
+        $("#write7").bind('click',function () {
+            document.getElementById("bg").style.display ="block";
+            document.getElementById("show").style.display ="block";
+            /*上面的标题*/
+            $("#title").text($(this).parent().prev().find(".title").text());
+            console.info($(this).parent().prev().find(".title").text());
+            /*输入框里面的值*/
+            $("#inp").val($(this).prev().find(".num").text());
+            /*单位显示*/
+            $("#company").text($(this).prev().find(".company").text());
+            console.info($(this).prev().find(".company").text());
+            $('#bg').bind("touchmove",function(e){
+                e.preventDefault();
+            });
+            /*取消*/
+            $("#btn_yes").bind("click",function () {
+                $("#write7").prev().find(".num").text($("#write7").prev().find(".num").text());
+                document.getElementById("bg").style.display ="none";
+                document.getElementById("show").style.display ="none";
+                $("#btn_no").css({
+                    background:"#ebebeb",
+                    color:"#999999"
+                });
+            });
+
+        });
+        $("#write8").bind('click',function () {
+            document.getElementById("bg").style.display ="block";
+            document.getElementById("show").style.display ="block";
+            /*上面的标题*/
+            $("#title").text($(this).parent().prev().find(".title").text());
+            console.info($(this).parent().prev().find(".title").text());
+            /*输入框里面的值*/
+            $("#inp").val($(this).prev().find(".num").text());
+            /*单位显示*/
+            $("#company").text($(this).prev().find(".company").text());
+            console.info($(this).prev().find(".company").text());
+            $('#bg').bind("touchmove",function(e){
+                e.preventDefault();
+            });
+            /*取消*/
+            $("#btn_yes").bind("click",function () {
+                $("#write8").prev().find(".num").text($("#write8").prev().find(".num").text());
+                document.getElementById("bg").style.display ="none";
+                document.getElementById("show").style.display ="none";
+                $("#btn_no").css({
+                    background:"#ebebeb",
+                    color:"#999999"
+                });
+            });
+
+        });
+        $("#write9").bind('click',function () {
+            document.getElementById("bg").style.display ="block";
+            document.getElementById("show").style.display ="block";
+            /*上面的标题*/
+            $("#title").text($(this).parent().prev().find(".title").text());
+            console.info($(this).parent().prev().find(".title").text());
+            /*输入框里面的值*/
+            $("#inp").val($(this).prev().find(".num").text());
+            /*单位显示*/
+            $("#company").text($(this).prev().find(".company").text());
+            console.info($(this).prev().find(".company").text());
+            $('#bg').bind("touchmove",function(e){
+                e.preventDefault();
+            });
+            /*取消*/
+            $("#btn_yes").bind("click",function () {
+                $("#write9").prev().find(".num").text($("#write9").prev().find(".num").text());
+                document.getElementById("bg").style.display ="none";
+                document.getElementById("show").style.display ="none";
+                $("#btn_no").css({
+                    background:"#ebebeb",
+                    color:"#999999"
+                });
+            });
+
+        });
+    </script>
+
+</body>
+</html>
